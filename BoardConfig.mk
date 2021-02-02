@@ -45,5 +45,9 @@ BOARD_RIL_CLASS := ../../../device/samsung/n5120/ril
 # inherit from the proprietary version
 -include vendor/samsung/n5120/BoardConfigVendor.mk
 
+# Selinux
+BOARD_SEPOLICY_DIRS += \
+    device/samsung/n5120/selinux
+
 # assert
 TARGET_OTA_ASSERT_DEVICE := GT-N5120,n5120,konalte,konaltexx

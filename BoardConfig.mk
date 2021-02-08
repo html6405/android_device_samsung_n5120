@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2016 The CyanogenMod Project
+# Copyright (C) 2013 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -22,28 +22,30 @@
 
 LOCAL_PATH := device/samsung/n5120
 
-TARGET_SPECIFIC_HEADER_PATH += $(LOCAL_PATH)/include
-
-# Inline kernel building
-TARGET_KERNEL_SOURCE := kernel/samsung/smdk4412
-TARGET_KERNEL_CONFIG := lineageos_n5120_defconfig
-
-# GPS
-BOARD_GPS_SET_PRIVACY := true
-
-# Recovery
-TARGET_RECOVERY_FSTAB := device/samsung/n5120/rootdir/fstab.smdk4x12
-RECOVERY_FSTAB_VERSION := 2
-BOARD_RECOVERY_SWIPE := true
-BOARD_RECOVERY_SWIPE_SWAPXY := true
-
 # RIL
 BOARD_PROVIDES_LIBRIL := true
 BOARD_MODEM_TYPE := mdm9x35
-BOARD_RIL_CLASS := ../../../device/samsung/n5120/ril
 
-# inherit from the proprietary version
--include vendor/samsung/n5120/BoardConfigVendor.mk
+
+# Bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
+
+# Kernel
+TARGET_KERNEL_CONFIG := lineageos_n5120_defconfig
+
+# Filesystem
+BOARD_BOOTIMAGE_PARTITION_SIZE := 8388608
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 8388608
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1610612736
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 11811160048
+BOARD_FLASH_BLOCK_SIZE := 2048
+TARGET_USERIMAGES_USE_EXT4 := true
+
+# Recovery
+TARGET_RECOVERY_FSTAB := device/samsung/n5120/rootdir/fstab.smdk4x12
+TARGET_RECOVERY_DENSITY := mdpi
+TARGET_USERIMAGES_USE_F2FS := true
+RECOVERY_FSTAB_VERSION := 2
 
 # Selinux
 BOARD_SEPOLICY_DIRS += \

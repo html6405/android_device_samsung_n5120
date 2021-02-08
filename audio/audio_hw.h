@@ -18,7 +18,7 @@
  * limitations under the License.
  */
 
-#define CONFIG_FILE "/system/etc/sound/n51xx"
+#define CONFIG_FILE "/system/etc/sound/tiny_hw.xml"
 
 /* ALSA cards for WM1811 */
 #define CARD_DEFAULT  0

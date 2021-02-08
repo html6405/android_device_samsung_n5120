@@ -29,5 +29,5 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 	PRODUCT_NAME=konaltexx \
 	TARGET_DEVICE=konalte \
 	PRIVATE_BUILD_DESC="konaltexx-user 4.4.2 KOT49H N5120XXDOD1 release-keys"
-	
+
 BUILD_FINGERPRINT=samsung/konaltexx/konalte:4.4.2/KOT49H/N5120XXDOD1:user/release-keys

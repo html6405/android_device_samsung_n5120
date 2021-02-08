@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2016 The CyanogenMod Project
+# Copyright (C) 2013 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,30 +16,39 @@
 
 LOCAL_PATH := device/samsung/n5120
 
+# Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Init files
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/fstab.smdk4x12:root/fstab.smdk4x12
+    $(LOCAL_PATH)/rootdir/fstab.smdk4x12:root/fstab.smdk4x12 \
+    $(LOCAL_PATH)/rootdir/init.target.rc:root/init.target.rc \
+    $(LOCAL_PATH)/rootdir/ueventd.smdk4x12.rc:root/ueventd.smdk4x12.rc 
+
+# Legacy BLOB Support
+TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
+    /system/lib/libsec-ril.so=19
 
 # RIL
 PRODUCT_PROPERTY_OVERRIDES += \
-    mobiledata.interfaces=pdp0,gprs,ppp0,rmnet0,rmnet1 \
-    ro.telephony.ril_class=smdk4x12QComRIL
+    ro.telephony.call_ring.multiple=false \
+    ro.telephony.call_ring.delay=3000
 
-# These are the hardware-specific features
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
-    frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
-    frameworks/native/data/etc/android.software.sip.xml:system/etc/permissions/android.software.sip.xml \
-    frameworks/native/data/etc/tablet_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
+# RIL
+PRODUCT_PACKAGES += \
+    libsecril-client \
+    libsecril-client-sap
 
-# These are the hardware-specific features
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
-    frameworks/native/data/etc/android.hardware.sensor.barometer.xml:system/etc/permissions/android.hardware.sensor.barometer.xml
+PRODUCT_PROPERTY_OVERRIDES += \
+    mobiledata.interfaces=pdp0,gprs,ppp0,rmnet0,rmnet1
+
+
+# Include device blobs first
+$(call inherit-product, vendor/samsung/n8020/n8020-vendor.mk)
+
+# Vendor properties
+-include $(LOCAL_PATH)/vendor_prop.mk
 
 # Include common makefile
-$(call inherit-product, vendor/samsung/n5120/n5120-vendor.mk)
 $(call inherit-product, device/samsung/kona-common/kona-common.mk)
 $(call inherit-product, device/samsung/smdk4412-qcom-common/common.mk)

@@ -17,3 +17,5 @@ allow geomagneticd self:capability fowner;
 allow init geomagneticd:process noatsecure;
 allow geomagneticd sysfs:dir { open read };
 allow geomagneticd sysfs:file { open read };
+allow geomagneticd system_data_file:dir { write add_name };
+allow geomagneticd system_data_file:file { create };

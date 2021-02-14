@@ -8,4 +8,4 @@ allow orientationd input_device:dir { search read open };
 allow orientationd sysfs:dir { open read };
 allow orientationd sysfs:file { open read };
 allow orientationd sysfs_cpuinfo:dir { search };
-allow orientationd sysfs_cpuinfo:file { read open };
+allow orientationd sysfs_cpuinfo:file { read open getattr };

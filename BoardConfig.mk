@@ -25,7 +25,6 @@ LOCAL_PATH := device/samsung/n5120
 TARGET_SPECIFIC_HEADER_PATH += $(LOCAL_PATH)/include
 
 # Inline kernel building
-TARGET_KERNEL_SOURCE := kernel/samsung/smdk4412
 TARGET_KERNEL_CONFIG := lineageos_n5120_defconfig
 
 # GPS

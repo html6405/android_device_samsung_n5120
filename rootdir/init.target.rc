@@ -5,7 +5,7 @@ on init
 ############################
 
 # Missing symbols
-    export LD_SHIM_LIBS /system/lib/libsec-ril.so|libsecril-shim.so:/system/bin/gpsd|libsamsung_symbols.so
+    export LD_SHIM_LIBS /system/lib/libsec-ril.so|libshim_ril.so
 
 # Vibetonz
     export VIBE_PIPE_PATH /dev/pipes
@@ -143,6 +143,8 @@ on post-fs-data
     chown system radio /sys/class/sensors/accelerometer_sensor/reactive_alert
     chown system radio /sys/class/sensors/accelerometer_sensor/vendor
     chown system radio /sys/class/sensors/accelerometer_sensor/name
+    chown system input /sys/class/input/input4/enable
+    write /sys/class/input/input4/enable "1"
 
 # Proximity_sensor
     chown system radio /sys/class/sensors/proximity_sensor/state

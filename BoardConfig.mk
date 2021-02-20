@@ -49,7 +49,7 @@ RECOVERY_FSTAB_VERSION := 2
 
 # Selinux
 BOARD_SEPOLICY_DIRS += \
-    device/samsung/n5120/selinux
+    device/samsung/kona-common/selinux
 
 # assert
 TARGET_OTA_ASSERT_DEVICE := GT-N5120,n5120,konalte,konaltexx

@@ -1,15 +1,20 @@
 #
 # system.prop for n5120
 #
+dalvik.vm.dexopt-data-only=1
+dalvik.vm.dex2oat-Xmx=256m
+rild.libpath=/system/lib/libsecril-shim.so
+ro.telephony.default_network=9
+telephony.lteOnGsmDevice=1
+telephony.lteOnCdmaDevice=0
+ro.ril.telephony.mqanelements=6
+ro.hdcp2.rx=tz
 
-rild.libpath=/system/lib/libsec-ril.so
 ro.lcd_min_brightness=20
 ro.sf.lcd_density=213
 ro.hdcp2.rx=tz
-ro.egl.destroy_after_detach=true
 ro.telephony.default_network=9
 telephony.lteOnGsmDevice=1
-ro.ril.telephony.mqanelements=6
 
 # EGL blobs crash on screen off
 ro.egl.destroy_after_detach=true

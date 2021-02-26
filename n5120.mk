@@ -23,11 +23,7 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/fstab.smdk4x12:root/fstab.smdk4x12 \
     $(LOCAL_PATH)/rootdir/init.target.rc:root/init.target.rc \
-    $(LOCAL_PATH)/rootdir/ueventd.smdk4x12.rc:root/ueventd.smdk4x12.rc 
-
-# Legacy BLOB Support
-TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
-    /system/lib/libsec-ril.so=19
+    $(LOCAL_PATH)/rootdir/ueventd.smdk4x12.rc:root/ueventd.smdk4x12.rc
 
 # RIL
 PRODUCT_PROPERTY_OVERRIDES += \

@@ -353,13 +353,13 @@ on fs
     # zram
     swapon_all /fstab.smdk4x12
 
-service geomagneticd /system/bin/geomagneticd
+service geomagneticd /system/vendor/bin/geomagneticd
     class main
     user compass
     group system input
     seclabel u:r:geomagneticd:s0
 
-service orientationd /system/bin/orientationd
+service orientationd /system/vendor/bin/orientationd
     class main
     user compass
     group input

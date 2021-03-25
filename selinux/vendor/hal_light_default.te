@@ -1,0 +1,5 @@
+allow hal_light_default sysfs_cpuinfo:dir search;
+allow hal_light_default sysfs_cpuinfo:file { getattr open read };
+allow hal_light_default sysfs_display:dir search;
+allow hal_light_default sysfs_display:file { getattr open read write };
+allow hal_light_default sysfs:file { getattr open write };

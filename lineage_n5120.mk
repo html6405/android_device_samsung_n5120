@@ -23,11 +23,3 @@ PRODUCT_NAME := lineage_n5120
 PRODUCT_BRAND := samsung
 PRODUCT_MODEL := GT-N5120
 PRODUCT_MANUFACTURER := samsung
-
-# Set build fingerprint / ID / Product Name ect.
-PRODUCT_BUILD_PROP_OVERRIDES += \
-	PRODUCT_NAME=konaltexx \
-	TARGET_DEVICE=konalte \
-	PRIVATE_BUILD_DESC="konaltexx-user 4.4.2 KOT49H N5120XXDOD1 release-keys"
-
-BUILD_FINGERPRINT=samsung/konaltexx/konalte:4.4.2/KOT49H/N5120XXDOD1:user/release-keys

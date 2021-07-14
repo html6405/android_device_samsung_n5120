@@ -15,6 +15,7 @@
 #
 
 LOCAL_PATH := device/samsung/n5120
+COMMON_PATH := device/samsung/kona-common
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
@@ -24,6 +25,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/fstab.smdk4x12:root/fstab.smdk4x12 \
     $(LOCAL_PATH)/rootdir/init.target.rc:root/init.target.rc \
     $(LOCAL_PATH)/rootdir/ueventd.smdk4x12.rc:root/ueventd.smdk4x12.rc
+
+# Add support for SGH-I467M
+PRODUCT_COPY_FILES += \
+	$(COMMON_PATH)/configs/n5110.xml:system/etc/sound/I467M.xml
 
 # RIL
 PRODUCT_PROPERTY_OVERRIDES += \

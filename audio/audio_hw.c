@@ -3102,15 +3102,23 @@ static int adev_config_parse(struct m0_audio_device *adev)
     struct config_parse_state s;
     FILE *f;
     XML_Parser p;
+    char property[PROPERTY_VALUE_MAX];
+    char file[80];
     int ret = 0;
     bool eof = false;
     int len;
     char buf[1024];
 
-    ALOGV("Reading configuration from %s\n", CONFIG_FILE);
-    f = fopen(CONFIG_FILE, "r");
+    property_get("ro.product.device", property, "tiny_hw");
+    ALOGV("Found %s device\n", property);
+    if (!strncmp(property,"konaltecan",10))
+        snprintf(file, sizeof(file), "/system/etc/sound/I467M.xml");
+    else
+        snprintf(file, sizeof(file), CONFIG_FILE);
+    ALOGV("Reading configuration from %s\n", file);
+    f = fopen(file, "r");
     if (!f) {
-    ALOGE("Failed to open %s\n", CONFIG_FILE);
+    ALOGE("Failed to open %s\n", file);
     return -ENODEV;
     }
 

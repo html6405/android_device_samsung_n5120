@@ -26,10 +26,6 @@ LOCAL_PATH := device/samsung/n5120
 BOARD_PROVIDES_LIBRIL := true
 BOARD_MODEM_TYPE := mdm9x35
 
-
-# Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
-
 # Kernel
 TARGET_KERNEL_CONFIG := lineageos_n5120_defconfig
 

@@ -31,7 +31,7 @@ PRODUCT_COPY_FILES += \
 
 # Add support for SGH-I467M
 PRODUCT_COPY_FILES += \
-	$(COMMON_PATH)/configs/n5110.xml:system/etc/sound/I467M.xml
+	$(COMMON_PATH)/configs/n5110.xml:vendor/etc/sound/I467M.xml
 
 # RIL
 PRODUCT_PROPERTY_OVERRIDES += \

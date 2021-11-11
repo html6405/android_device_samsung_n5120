@@ -3109,7 +3109,7 @@ static int adev_config_parse(struct m0_audio_device *adev)
     property_get("ro.product.device", property, "tiny_hw");
     ALOGV("Found %s device\n", property);
     if (!strncmp(property,"konaltecan",10))
-        snprintf(file, sizeof(file), "/system/etc/sound/I467M.xml");
+        snprintf(file, sizeof(file), CCONFIG_FILE_LTECAN);
     else
         snprintf(file, sizeof(file), CONFIG_FILE);
     ALOGV("Reading configuration from %s\n", file);

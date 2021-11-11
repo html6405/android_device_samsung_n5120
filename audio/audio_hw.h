@@ -18,8 +18,8 @@
  * limitations under the License.
  */
 
-#define CONFIG_FILE "/system/etc/sound/tiny_hw.xml"
-
+#define CONFIG_FILE "/vendor/etc/sound/tiny_hw.xml"
+#define CCONFIG_FILE_LTECAN "/vendor/etc/sound/I467M.xml"
 /* ALSA cards for WM1811 */
 #define CARD_DEFAULT  0
 

@@ -46,6 +46,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     mobiledata.interfaces=pdp0,gprs,ppp0,rmnet0,rmnet1
 
+# HIDL
+DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/manifest.xml
 
 # Include device blobs first
 $(call inherit-product, vendor/samsung/n5120/n5120-vendor-blobs.mk)

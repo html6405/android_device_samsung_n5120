@@ -1,2 +1,0 @@
-allow crash_dump sysfs_cpuinfo:dir search;
-allow crash_dump sysfs_cpuinfo:file { read getattr open };

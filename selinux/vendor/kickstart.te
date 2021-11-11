@@ -1,7 +1,3 @@
-# kickstart processes and scripts
-type kickstart, domain;
-type kickstart_exec, exec_type, file_type;
-
 # kickstart_checker.sh talks to init over the property socket
 set_prop(kickstart, radio_prop)
 
@@ -34,7 +30,7 @@ allow kickstart block_device:dir { getattr write search };
 
 allow kickstart shell_exec:file entrypoint;
 # ls on /data/qcks/
-allow kickstart self:capability { setuid };
+allow kickstart self:capability { dac_override setuid };
 allow kickstart tombstone_data_file:file { open write getattr read setattr };
 allow kickstart tombstone_data_file:dir { search };
 
@@ -47,8 +43,18 @@ allow kickstart kickstart:process { execmem };
 allow kickstart usbfs:dir { search };
 allow kickstart vfat:dir { search };
 allow kickstart rild_exec:file { getattr execute read open };
-allow kickstart sysfs_cpuinfo:dir search;
-allow kickstart sysfs_cpuinfo:file { getattr open read };
-allow kickstart efs_boot_dev:blk_file { getattr open read write };
-allow kickstart unlabeled:dir search;
-allow kickstart block_device:dir add_name;
+
+allow kickstart efs_block_device:blk_file getattr;
+allow kickstart efs_block_device:dir { getattr mounton };
+allow kickstart efs_boot_dev:blk_file { getattr open read };
+allow kickstart hwservicemanager:binder call;
+allow kickstart hwservicemanager_prop:file { getattr open read };
+allow kickstart kernel:process setsched;
+allow kickstart labeledfs:filesystem mount;
+allow kickstart preload_block_device:blk_file getattr;
+allow kickstart proc_filesystems:file { getattr open read };
+allow kickstart self:capability { chown fowner };
+allow kickstart system_data_file:dir setattr;
+allow kickstart system_data_file:lnk_file read;
+allow kickstart tombstone_data_file:dir { getattr mounton };
+allow kickstart vfat:filesystem mount;

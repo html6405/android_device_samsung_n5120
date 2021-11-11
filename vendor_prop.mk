@@ -89,3 +89,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # GPS
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.ril.def.agps.mode=1
+
+# Wifi
+PRODUCT_PROPERTY_OVERRIDES += \
+	wifi.supplicant_scan_interval=240

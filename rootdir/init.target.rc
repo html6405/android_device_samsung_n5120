@@ -362,13 +362,13 @@ on fs
     # zram
     swapon_all /vendor/etc/fstab.smdk4x12
 
-service geomagneticd /system/vendor/bin/geomagneticd
+service vendor.geomagneticd /system/vendor/bin/geomagneticd
     class main
     user compass
     group system input
     seclabel u:r:geomagneticd:s0
 
-service gpsd /vendor/bin/gpsd -c /vendor/etc/gps.xml
+service vendor.gpsd /vendor/bin/gpsd -c /vendor/etc/gps.xml
     class main
     user gps
     group system inet net_raw
@@ -376,19 +376,19 @@ service gpsd /vendor/bin/gpsd -c /vendor/etc/gps.xml
     seclabel u:r:gpsd:s0
     setenv LD_PRELOAD "/vendor/lib/libsamsung_symbols.so"
 
-service orientationd /vendor/bin/orientationd
+service vendor.orientationd /vendor/bin/orientationd
     class main
     user compass
     group input
     seclabel u:r:orientationd:s0
 
-service qc_kickstart /vendor/bin/qcks s
+service vendor.qc_kickstart /vendor/bin/qcks s
     class core
     user root
     group radio cache inet misc audio sdcard_rw log
     seclabel u:r:kickstart:s0
 
-service qmuxd /vendor/bin/qmuxd
+service vendor.qmuxd /vendor/bin/qmuxd
     class main
     user system
     group radio log audio bluetooth gps log

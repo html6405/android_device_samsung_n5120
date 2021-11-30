@@ -44,8 +44,8 @@ RECOVERY_FSTAB_VERSION := 2
 
 # Selinux
 BOARD_SEPOLICY_DIRS += device/samsung/n5120/selinux/vendor
-BOARD_PLAT_PUBLIC_SEPOLICY_DIR += device/samsung/n5120/selinux/public
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR += device/samsung/n5120/selinux/private
+SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += device/samsung/n5120/selinux/public
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += device/samsung/n5120/selinux/private
 
 # assert
 TARGET_OTA_ASSERT_DEVICE := GT-N5120,n5120,konalte,konaltexx

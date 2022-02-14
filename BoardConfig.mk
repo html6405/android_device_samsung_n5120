@@ -43,7 +43,7 @@ TARGET_USERIMAGES_USE_F2FS := true
 RECOVERY_FSTAB_VERSION := 2
 
 # Selinux
-BOARD_VENDOR_SEPOLICY_DIRS += device/samsung/n5120/selinux/vendor
+BOARD_SEPOLICY_DIRS += device/samsung/n5120/selinux/vendor
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += device/samsung/n5120/selinux/public
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += device/samsung/n5120/selinux/private
 

@@ -46,5 +46,6 @@ allow init proc:file setattr;
 allow init sysfs_cpuinfo:file { open setattr write };
 allow init sysfs_usb:file { setattr write };
 allow init system_file:file execute_no_trans;
+allow init sensorenabler_exec:file { getattr execute read open execute_no_trans };
 
 domain_auto_trans(init, rootfs, cpboot-daemon, macloader, tinyplay)
